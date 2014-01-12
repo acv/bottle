@@ -1221,6 +1221,7 @@ class BaseRequest(object):
             if item.filename:
                 post[item.name] = FileUpload(item.file, item.name,
                                              item.filename, item.headers)
+                post.__FieldStorage = data
             else:
                 post[item.name] = item.value
         return post
